@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Ranked - Web UI PoC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LeetCode Ranked ⚔️</h1>
+        <div id="status" class="status-badge">Disconnected</div>
+    </header>
+
+    <div class="main-container">
+        <div class="panel">
+            <h2>Python Solution Editor</h2>
+            <textarea id="codeEditor"
+                placeholder="# Write your Python solution here...&#10;def solution():&#10;    print('Hello World')&#10;solution()"
+                disabled></textarea>
+            <button id="submitBtn" onclick="submitCode()" disabled>Submit Solution</button>
+        </div>
+
+        <div class="panel">
+            <h2>Match Output & Logs</h2>
+            <div id="logStream" class="log-stream">
+                <div class="log-entry log-system">Click "Connect to Server" to look for a match...</div>
+            </div>
+
+            <h2>Player Info</h2>
+            <input type="text" id="usernameInput" placeholder="Enter Username (e.g. Anish)" />
+            <button id="connectBtn" onclick="connectToServer()">Connect to Server</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

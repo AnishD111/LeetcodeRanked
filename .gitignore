@@ -1,0 +1,26 @@
+﻿# Environment and Secrets
+.env
+*.env
+backend/.env
+
+# Binaries and executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+backend/leetcoderanked.exe
+
+# Node / Frontend build artifacts
+node_modules/
+dist/
+build/
+.npm/
+
+# Go build cache & OS artifacts
+.DS_Store
+Thumbs.db
+*.log
+
+# Large temporary datasets
+scripts/compiled_problems.json

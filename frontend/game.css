@@ -1,0 +1,219 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+header h1 { color: #ffa116; font-size: 1.4rem; }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#user-info { color: #aaa; font-size: 0.9rem; }
+
+.status-badge {
+  background: #d9534f;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 10px;
+}
+
+.status-badge.queued   { background: #f0a500; }
+.status-badge.in-match { background: #5cb85c; }
+
+#logout-btn {
+  background: none;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+}
+
+#logout-btn:hover { color: #fff; border-color: #666; }
+
+.main-container {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.panel {
+  background: #262626;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 15px;
+}
+
+.panel h2 {
+  color: #00bfff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+#problem-header {
+  background: #1e1e1e;
+  border-left: 3px solid #ffa116;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+}
+
+#problem-header.hidden { display: none; }
+
+#problem-title { color: #ffa116; font-size: 0.95rem; margin-bottom: 6px; }
+#problem-desc  { color: #aaa; font-size: 0.85rem; line-height: 1.6; }
+
+#codeEditor {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #9cdcfe;
+  flex: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 0;
+  outline: none;
+  padding: 10px;
+  resize: none;
+}
+
+#codeEditor:focus { border-color: #00bfff; }
+
+#submitBtn {
+  background: #ffa116;
+  border: none;
+  border-radius: 4px;
+  color: #1a1a1a;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 11px;
+  transition: background 0.15s;
+}
+
+#submitBtn:hover:not(:disabled) { background: #e68a00; }
+#submitBtn:disabled { background: #555; color: #888; cursor: not-allowed; }
+
+.log-stream {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 4px;
+  flex: 1;
+  font-family: monospace;
+  font-size: 12px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 10px;
+  white-space: pre-wrap;
+}
+
+.log-entry {
+  border-left: 3px solid #555;
+  margin-bottom: 7px;
+  padding-left: 8px;
+}
+
+.log-system  { border-color: #00bfff; color: #38bdf8; }
+.log-success { border-color: #5cb85c; color: #a3e635; }
+.log-failure { border-color: #d9534f; color: #f87171; }
+
+#findMatchBtn {
+  background: #00bfff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 11px;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+#findMatchBtn:hover:not(:disabled) { background: #0099cc; }
+#findMatchBtn:disabled { background: #555; color: #888; cursor: not-allowed; }
+
+.section-title {
+  margin-top: 20px;
+}
+
+.history-list {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 4px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-placeholder {
+  color: #777;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.history-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 6px;
+}
+
+.history-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.history-entry .date {
+  color: #777;
+  font-size: 0.78rem;
+}
+
+.history-entry .delta {
+  font-weight: 700;
+}
+
+.history-entry .delta.gain { color: #a3e635; }
+.history-entry .delta.loss { color: #f87171; }
+

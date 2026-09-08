@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetCode Ranked — Arena</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+
+  <header>
+    <h1>LeetCode Ranked ⚔️</h1>
+    <div class="header-right">
+      <span id="user-info"></span>
+      <div id="status-badge" class="status-badge">Disconnected</div>
+      <button id="logout-btn" onclick="handleLogout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+
+    <!-- Left: problem description + code editor -->
+    <div class="panel" id="editor-panel">
+      <div id="problem-header" class="hidden">
+        <h2 id="problem-title"></h2>
+        <p  id="problem-desc"></p>
+      </div>
+      <h2 id="editor-heading">Python Solution Editor</h2>
+      <textarea id="codeEditor"
+        placeholder="# Your solution will appear here once a match starts..."
+        disabled></textarea>
+      <button id="submitBtn" onclick="submitCode()" disabled>Submit Solution</button>
+    </div>
+
+    <!-- Right: logs + find match button -->
+    <div class="panel" id="log-panel">
+      <h2>Match Output &amp; Logs</h2>
+      <div id="logStream" class="log-stream">
+        <div class="log-entry log-system">Click "Find Match" to join the queue...</div>
+      </div>
+      <button id="findMatchBtn" onclick="findMatch()">Find Match</button>
+
+      <h2 class="section-title">Rating History</h2>
+      <div id="historyList" class="history-list">
+        <div class="history-placeholder">Loading history...</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

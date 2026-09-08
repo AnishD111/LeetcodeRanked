@@ -1,0 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h1 { 
+    margin: 0; 
+    color: #ffa116; 
+    font-size: 24px; 
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #d9534f;
+    color: white;
+}
+
+.connected { 
+    background-color: #5cb85c; 
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+h2 { 
+    margin-top: 0; 
+    font-size: 18px; 
+    color: #00bfff; 
+}
+
+textarea {
+    flex: 1;
+    background-color: #1e1e1e;
+    color: #9cdcfe;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+}
+
+textarea:focus { 
+    border-color: #00bfff; 
+}
+
+button {
+    margin-top: 10px;
+    background-color: #ffa116;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover { 
+    background-color: #e68a00; 
+}
+
+button:disabled { 
+    background-color: #555; 
+    color: #888; 
+    cursor: not-allowed; 
+}
+
+#connectBtn {
+    background-color: #00bfff; 
+    color: white;
+}
+
+#connectBtn:hover {
+    background-color: #0099cc;
+}
+
+.log-stream {
+    flex: 1;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    font-size: 13px;
+}
+
+.log-entry { 
+    margin-bottom: 8px; 
+    border-left: 3px solid #666; 
+    padding-left: 8px; 
+}
+
+.log-success { border-color: #5cb85c; color: #a3e635; }
+.log-failure { border-color: #d9534f; color: #f87171; }
+.log-system { border-color: #00bfff; color: #38bdf8; }
